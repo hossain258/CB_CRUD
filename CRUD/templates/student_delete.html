@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Update {% endblock title %}
+{% load crispy_forms_tags %}
+ 
+
+ {% block body %}
+
+<div class='container '>
+ <form method="post" >
+     {% csrf_token %}
+    
+    <p style="color:red"> Are you sure you want to delete ?</p>
+    <a class="btn btn-primary" href="{% url 'student-list'  %}">Go back</a>   
+    
+    <input class='btn btn-danger' type="submit" value="Confirm">
+    
+</form>
+</div>
+
+ {% endblock %}

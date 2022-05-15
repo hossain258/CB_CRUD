@@ -1,0 +1,65 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block title %} index {% endblock title %}
+ 
+
+ {% block body %}
+
+ {% for message in messages %}
+ <div class="alert alert-success" role="alert">
+    {{ message }}
+ </div>
+ {% endfor %}
+
+    <div> <a class="btn  btn-info text-right" href="{% url 'student-create' %}">Add Student</a></div>
+ <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Student_Roll</th>
+        <th scope="col">Student_name</th>
+        <th scope="col">Student_Course</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for object in student_list %} 
+      <tr>
+        <th scope="row">{{ object.id }}</th>
+        <td>{{ object.student_roll }}</td>
+        <td>{{ object.student_name }}</td>
+        <td>{{ object.student_course }}</td>
+
+        
+       
+        <td ><a class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Info" href="{% url 'student-detail' object.pk %}"><i class='fa fa-info'></i></a>
+          <a class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit" href="{% url 'student-update' object.pk %}"><i class='fa fa-edit'></i></a>
+          <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete" href="{% url 'student-delete' object.pk %}"><i class="fa fa-trash"></i></a>
+        </td>
+        
+     
+        
+      </tr>
+
+        {% endfor %}
+
+      
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+ {% endblock body %}
