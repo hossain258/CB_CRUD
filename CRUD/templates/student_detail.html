@@ -16,6 +16,7 @@
     <h2>{% if object.Title %}
             {{ object.Title|upper|safe }}
         {% else %}
+    <h3 style="color:brown">The title is coming soon</h3>
     
         {% endif %}
     <h2>
@@ -23,7 +24,7 @@
         {% if object.Description %}
             {{ object.Description|safe }}
         {% else %}
-        Des coming soon
+        <p>Description coming soon </p>
         {% endif %}
 
     </p>

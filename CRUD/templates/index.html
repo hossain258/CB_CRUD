@@ -3,7 +3,7 @@
 
 {% extends 'base.html' %}
 
-{% block title %} index {% endblock title %}
+{% block title %} Home{% endblock title %}
  
 
  {% block body %}
@@ -14,7 +14,7 @@
  </div>
  {% endfor %}
 
-    <div> <a class="btn  btn-info text-right" href="{% url 'student-create' %}">Add Student</a></div>
+  <div class="pt-4 "><a class="btn  btn-info text-end" href="{% url 'student-create' %}">Add Student</a></div>
  <table class="table">
     <thead>
       <tr>
